@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Threat Intelligence Tools</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='tools.css') }}">
+</head>
+<body>
+
+    <h1>🛡️ Cyber Threat Intelligence Tools</h1>
+
+    <!-- IP Reputation Checker -->
+    <div>
+        <h3>IP Reputation Checker</h3>
+        <p>Check if an IP address is blacklisted or malicious.</p>
+        <input type="text" id="ip-address" placeholder="Enter an IP address">
+        <button onclick="checkIP()">Check IP</button>
+        <p><strong>Reputation:</strong> <span id="ip-result"></span></p>
+    </div>
+
+    <!-- Dark Web Monitoring -->
+    <div>
+        <h3>Dark Web Monitoring</h3>
+        <p>Check if your email has been found in dark web breaches.</p>
+        <input type="email" id="email-check" placeholder="Enter an email address">
+        <button onclick="checkDarkWeb()">Check Email</button>
+        <p><strong>Status:</strong> <span id="email-result"></span></p>
+    </div>
+
+    <a href="{{ url_for('tools_dashboard') }}" class="btn">🔙 Back to Tools Dashboard</a>
+
+    <script src="{{ url_for('static', filename='cyber_threat_tools.js') }}"></script>
+
+</body>
+</html>

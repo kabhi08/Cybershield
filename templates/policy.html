@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Policies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='policy.css') }}">
+</head>
+<body>
+
+   <!-- Animated Background -->
+   <video autoplay muted loop id="bg-video">
+    <source src="static/images/policy.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
+
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">CyberShield</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('policy_page') }}" class="active">Policies</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            {% if session['user_id'] %}
+                <li><a href="{{ url_for('logout') }}" class="logout-btn">Logout</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}" class="login-btn">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Cybersecurity Policies</h1>
+        <p>Explore our security guidelines and best practices.</p>
+        <a href="{{ url_for('add_policy') }}" class="btn btn-primary">➕ Add Policy</a>
+    </header>
+
+    <!-- Policies Section -->
+    <section class="policy-container">
+    <h2>Available Policies</h2>
+    
+    {% if policies %}
+        <div class="policy-list">
+            {% for policy in policies %}
+                <div class="policy-card">
+                    <h3>{{ policy['title'] }}</h3>
+                    <p>{{ policy['description'][:100] }}...</p>
+                    <a href="{{ url_for('policy_details', policy_id=policy['id']) }}" class="read-more">Read More</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No policies available.</p>
+    {% endif %}
+</section>
+
+    
+
+    <!-- Modal for Policy Details -->
+    <div id="policyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePolicyModal()">&times;</span>
+            <h2 id="policyTitle"></h2>
+            <p id="policyDescription"></p>
+            <button onclick="closePolicyModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()">▲</button>
+
+    <script src="{{ url_for('static', filename='policy.js') }}"></script>
+
+</body>
+</html>

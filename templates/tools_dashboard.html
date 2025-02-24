@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Tools Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='tools.css') }}">
+</head>
+<body>
+    <h1>🔒 Security Policy Tools</h1>
+    
+    <div class="policy-section">
+        <h2>Data Protection & Privacy</h2>
+        <ul>
+            <li><a href="{{ url_for('encryption_tool') }}">AES Encryption</a></li>
+            <li><a href="#">Privacy Scanner (Coming Soon)</a></li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>Network Security Compliance</h2>
+        <ul>
+            <li><a href="{{ url_for('network_tools') }}">Firewall Tester & Port Scanner</a></li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>Incident Response Planning</h2>
+        <ul>
+            <li><a href="{{ url_for('incident_tools') }}">Phishing Link Checker & Log Analyzer</a></li>
+        </ul>
+    </div>
+    
+    <div class="policy-section">
+        <h2>Cyber Threat Intelligence</h2>
+        <ul>
+            <li><a href="{{ url_for('cyber_threat_tools') }}">IP Reputation Checker & Dark Web Monitoring</a></li>
+        </ul>
+    </div>
+    
+
+    <div class="policy-section">
+        <h2>Access Control Policies</h2>
+        <ul>
+            <li><a href="{{ url_for('password_tools') }}">Password Tools</a></li>
+            <li><a href="{{ url_for('access_control_tools') }}">2FA Generator & Session Monitoring</a></li>
+        </ul>
+    </div>
+
+    <a href="{{ url_for('home') }}" class="btn">🔙 Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Policy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Add New Policy</h1>
+    <form method="POST">
+        <label>Policy Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Description:</label>
+        <textarea name="description" required></textarea>
+
+        <label>Advantages (comma-separated):</label>
+        <textarea name="advantages" required></textarea>
+
+        <label>Disadvantages (comma-separated):</label>
+        <textarea name="disadvantages" required></textarea>
+
+        <label>Tools (comma-separated):</label>
+        <textarea name="tools" required></textarea>
+
+        <button type="submit">Add Policy</button>
+    </form>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>

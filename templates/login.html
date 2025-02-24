@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+    <div class="login-container" id="loginPopup">
+        <div class="login-box">
+            <h2 class="glitch">⚡ ACCESS TERMINAL ⚡</h2>
+            <p class="sub-text">Welcome back, Operative. Authenticate to proceed.</p>
+            <form action="{{ url_for('login') }}" method="POST">
+                <input type="email" id="login-email" name="email" placeholder="🔷 Enter your email" required>
+                <input type="password" id="login-password" name="password" placeholder="🔒 Enter your password" required>
+                <button type="submit">🟢 Initiate Login</button>
+            </form>
+            
+            <p class="register-link">No ID? <a href="{{ url_for('register') }}">Get Authorized</a></p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='login.js') }}"></script>
+</body>
+</html>

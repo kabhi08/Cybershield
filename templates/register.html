@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+</head>
+<body>
+
+
+
+    <!-- Registration Popup -->
+    <div id="registerPopup" class="popup-container">
+        <div class="popup">
+            <h2>Join CyberShield Now!</h2>
+            <p>Secure your digital future with the best cybersecurity policies.</p>
+
+            <form method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+
+                <button type="submit">Register</button>
+            </form>
+            <p class="login-text">
+                Already have an ID? <a href="{{ url_for('login') }}" id="loginLink">Login here</a>
+            </p>
+        </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='register.js') }}"></script>
+</body>
+</html>

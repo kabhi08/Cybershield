@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Encryption Tools</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='tools.css') }}">
+</head>
+<body>
+    <h1>🔐 AES Encryption Tool</h1>
+
+    <div>
+        <h3>Encrypt Text</h3>
+        <textarea id="text-to-encrypt" placeholder="Enter text"></textarea>
+        <input type="password" id="encryption-key" placeholder="Enter a secret key">
+        <button onclick="encryptText()">Encrypt</button>
+        <p><strong>Encrypted Text:</strong> <span id="encrypted-text"></span></p>
+    </div>
+
+    <div>
+        <h3>Decrypt Text</h3>
+        <textarea id="text-to-decrypt" placeholder="Enter encrypted text"></textarea>
+        <input type="password" id="decryption-key" placeholder="Enter the secret key">
+        <button onclick="decryptText()">Decrypt</button>
+        <p><strong>Decrypted Text:</strong> <span id="decrypted-text"></span></p>
+    </div>
+
+    <a href="{{ url_for('home') }}">🔙 Back to Home</a>
+
+    <!-- Include CryptoJS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="{{ url_for('static', filename='encryption_tools.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Policies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <video autoplay muted loop id="bg-video">
+        <source src="{{ url_for('static', filename='images/Cyber_Security.mp4') }}" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">CyberShield</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('policy_page') }}">Policies</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            {% if "user_id" in session %}
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Empowering Cybersecurity with Effective Policies</h1>
+        <p>Stay ahead with cutting-edge security frameworks & compliance strategies.</p>
+        <a href="{{ url_for('home') }}" class="policy-btn">Visit Website</a>
+    </div>
+
+    <!-- Policies Section -->
+    <div class="policy-container">
+        <h2>Our Security Policies</h2>
+        <ul>
+            <li> Data Protection & Privacy</li>
+            <li> Network Security Compliance</li>
+            <li> Incident Response Planning</li>
+            <li> Cyber Threat Intelligence</li>
+            <li> Access Control Policies</li>
+        </ul>
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <div class="scroll-down">
+        <a href="#policies"></a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top">▲</button>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>

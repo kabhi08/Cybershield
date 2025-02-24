@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ policy['title'] }} - Tools</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='tools.css') }}">
+</head>
+<body>
+
+<!-- Video Background -->
+<video autoplay muted loop id="bg-video">
+    <source src="{{ url_for('static', filename='images/policy_tool.mp4') }}" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
+
+<!-- Dark Overlay for Better Text Visibility -->
+<div class="overlay"></div>
+
+<!-- Hacking Text Animation -->
+<h2 id="hackingText" class="hacking-words">Hacking in Progress...</h2>
+
+<h1> Tools for {{ policy['title'] }}</h1>
+
+{% if tools %}
+    <h3>Available Tools:</h3>
+    <ul>
+        {% for tool in tools %}
+            <li>{{ tool }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No tools available for this policy.</p>
+{% endif %}
+
+<h3>Use a Tool</h3>
+<form id="toolForm">
+    <label for="business_name">Business Name:</label>
+    <input type="text" id="business_name" name="business_name" required>
+
+    <label for="tool_name">Select Tool:</label>
+    <select id="tool_name" name="tool_name" required>
+        {% for tool in tools %}
+            <option value="{{ tool }}">{{ tool }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Use Tool</button>
+</form>
+
+<!-- Hacking Process Animation -->
+<p id="hacking-process"></p>
+
+<!-- Result Message -->
+<p id="result-message"></p>
+
+<a href="{{ url_for('home') }}"> Back to Home</a>
+
+<script src="{{ url_for('static', filename='tools.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tool Usage Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+</head>
+<body>
+    <h1>Tool Usage Dashboard</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Business Name</th>
+                <th>Policy</th>
+                <th>Tool Used</th>
+                <th>Usage Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usage in usage_data %}
+            <tr>
+                <td>{{ usage[0] }}</td>
+                <td>{{ usage[1] }}</td>
+                <td>{{ usage[2] }}</td>
+                <td>{{ usage[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ url_for('admin_dashboard') }}">Back to Admin</a>
+</body>
+</html>

@@ -1,0 +1,125 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Animated Background */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.6) 20%, transparent 80%);
+    z-index: -1;
+}
+
+/* Floating Particles */
+@keyframes float {
+    0% { transform: translateY(0); opacity: 0.7; }
+    50% { transform: translateY(-15px); opacity: 0.5; }
+    100% { transform: translateY(0); opacity: 0.7; }
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+}
+
+/* Random Particle Positions */
+.particle:nth-child(1) { top: 10%; left: 20%; animation-duration: 5s; }
+.particle:nth-child(2) { top: 40%; left: 50%; animation-duration: 6s; }
+.particle:nth-child(3) { top: 70%; left: 30%; animation-duration: 4s; }
+.particle:nth-child(4) { top: 80%; left: 70%; animation-duration: 5s; }
+.particle:nth-child(5) { top: 50%; left: 80%; animation-duration: 7s; }
+
+/* Form Container */
+form {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    width: 320px;
+    text-align: left;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Placeholder Styling */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Focus Effect */
+input:focus {
+    box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.5);
+}
+
+/* Register Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.07);
+    box-shadow: 0px 0px 10px rgba(255, 72, 72, 0.8);
+}
+
+/* Already have an account */
+.login-link {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.login-link a {
+    color: #ff7eb3;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.login-link a:hover {
+    color: #ff4b2b;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Response Tools</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='tools.css') }}">
+</head>
+<body>
+
+    <h1>🚨 Incident Response Tools</h1>
+
+    <!-- Log Security Incident -->
+    <div>
+        <h3>Log a Security Incident</h3>
+        <input type="text" id="incident-title" placeholder="Incident Title">
+        <textarea id="incident-description" placeholder="Describe the incident"></textarea>
+        <button onclick="logIncident()">Report Incident</button>
+        <p id="incident-status"></p>
+    </div>
+
+    <!-- View Logged Incidents -->
+    <div>
+        <h3>View Reported Incidents</h3>
+        <button onclick="fetchIncidents()">Refresh Incidents</button>
+        <ul id="incident-list"></ul>
+    </div>
+
+    <a href="{{ url_for('tools_dashboard') }}" class="btn">🔙 Back to Tools Dashboard</a>
+
+    <script src="{{ url_for('static', filename='incident_response_tools.js') }}"></script>
+
+</body>
+</html>

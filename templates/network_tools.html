@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Security Compliance Tools</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='tools.css') }}">
+</head>
+<body>
+
+    <h1>🌐 Network Security Compliance Tools</h1>
+
+    <!-- Firewall Tester -->
+    <div>
+        <h3>Firewall Tester</h3>
+        <p>Check if a website allows or blocks certain network traffic.</p>
+        <input type="text" id="firewall-url" placeholder="Enter website URL (e.g., example.com)">
+        <button onclick="testFirewall()">Test Firewall</button>
+        <p><strong>Result:</strong> <span id="firewall-result"></span></p>
+    </div>
+
+    <!-- Port Scanner -->
+    <div>
+        <h3>Port Scanner</h3>
+        <p>Scan a website or server to check for open ports.</p>
+        <input type="text" id="port-url" placeholder="Enter IP or domain">
+        <button onclick="scanPorts()">Scan Ports</button>
+        <p><strong>Open Ports:</strong> <span id="port-result"></span></p>
+    </div>
+
+    <a href="{{ url_for('tools_dashboard') }}" class="btn">🔙 Back to Tools Dashboard</a>
+
+    <script src="{{ url_for('static', filename='network_tools.js') }}"></script>
+
+</body>
+</html>

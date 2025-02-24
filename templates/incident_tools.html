@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Response Planning Tools</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='tools.css') }}">
+</head>
+<body>
+
+    <h1>🚨 Incident Response Planning Tools</h1>
+
+    <!-- Phishing Link Checker -->
+    <div>
+        <h3>Phishing Link Checker</h3>
+        <p>Check if a URL is a known phishing website.</p>
+        <input type="text" id="phishing-url" placeholder="Enter a URL (e.g., http://example.com)">
+        <button onclick="checkPhishing()">Check URL</button>
+        <p><strong>Result:</strong> <span id="phishing-result"></span></p>
+    </div>
+
+    <!-- Log Analyzer -->
+    <div>
+        <h3>Log Analyzer</h3>
+        <p>Upload system logs to detect suspicious activity.</p>
+        <input type="file" id="log-file">
+        <button onclick="analyzeLogs()">Analyze Logs</button>
+        <p><strong>Analysis Result:</strong> <span id="log-analysis-result"></span></p>
+    </div>
+
+    <a href="{{ url_for('tools_dashboard') }}" class="btn">🔙 Back to Tools Dashboard</a>
+
+    <script src="{{ url_for('static', filename='incident_tools.js') }}"></script>
+
+</body>
+</html>

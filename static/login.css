@@ -1,0 +1,130 @@
+/* Import Cyberpunk Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Cyberpunk Background */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #050505, #141414);
+    color: #00ffea;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Glitch Effect for Title */
+@keyframes glitch {
+    0% { text-shadow: 2px 2px 5px #ff00ff, -2px -2px 5px #00ffff; }
+    50% { text-shadow: -2px -2px 5px #ff00ff, 2px 2px 5px #00ffff; }
+    100% { text-shadow: 2px 2px 5px #ff00ff, -2px -2px 5px #00ffff; }
+}
+
+.glitch-text {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: glitch 0.8s infinite alternate;
+}
+
+/* Cyberpunk Button */
+button {
+    padding: 12px 20px;
+    background: linear-gradient(45deg, #ff0099, #00ffea);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 12px #ff0099;
+}
+
+/* Login Popup */
+.login-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 350px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 25px;
+    border: 2px solid #00ffea;
+    box-shadow: 0 0 15px #00ffea;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    transition: transform 0.4s ease-in-out, opacity 0.3s;
+    opacity: 0;
+}
+
+/* Show Popup */
+.show-popup {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: rgba(0, 255, 234, 0.2);
+    color: #00ffea;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Cyberpunk Input Glow */
+input:focus {
+    box-shadow: 0px 0px 12px #00ffea;
+}
+
+/* Cyberpunk Login Button */
+.login-popup button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #ff0099, #00ffea);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.login-popup button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 12px #ff0099;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    color: #ff0099;
+    font-size: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.close-btn:hover {
+    transform: scale(1.3);
+}
+
+/* Background Blur when Popup Opens */
+.blur-bg {
+    filter: blur(8px);
+    transition: 0.3s ease-in-out;
+}

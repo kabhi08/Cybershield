@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Applied Policy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Edit Applied Policy</h1>
+    
+    <form method="POST" action="{{ url_for('edit_policy', business_id=business[0]) }}">
+        <label for="policy">Select New Policy:</label>
+        <select name="policy_id">
+            {% for policy in policies %}
+                <option value="{{ policy[0] }}" {% if policy[0] == business[2] %}selected{% endif %}>
+                    {{ policy[1] }}
+                </option>
+            {% endfor %}
+        </select>
+        <button type="submit">Update Policy</button>
+    </form>
+
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>
